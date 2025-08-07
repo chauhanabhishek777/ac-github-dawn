@@ -1,0 +1,99 @@
+
+<style>
+.zigzag-scroll-container {
+  overflow-x: scroll;
+  white-space: nowrap;
+  padding: 2rem 0;
+}
+.zigzag-scroll-wrapper {
+  display: flex;
+  gap: 2rem;
+  scroll-snap-type: x mandatory;
+}
+.zigzag-card {
+  scroll-snap-align: start;
+  position: relative;
+  width: 250px;
+  flex: 0 0 auto;
+  transform: translateY(calc((var(--index) % 2) * 20px));
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(var(--index) * 0.2s);
+  opacity: 0;
+}
+.zigzag-card img,
+.zigzag-card video {
+  width: 100%;
+  height: 350px;
+}
+.card-text {
+  margin-top: 10px;
+}
+.card-text h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.card-text p {
+  font-size: 14px;
+  color: #555;
+}
+
+</style>
+<div class="zigzag-scroll-container">
+  <div class="zigzag-scroll-wrapper">
+    {% for block in section.blocks %}
+      <div class="zigzag-card scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
+        {% if block.settings.video_url %}
+          <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+        {% elsif block.settings.image %}
+          <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}">
+        {% endif %}
+        <div class="card-text">
+          <h2>{{ block.settings.title }}</h2>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Zigzag Scroll Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "media_card",
+      "name": "Media Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "video_url",
+          "label": "Optional Video URL (MP4 only)"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "NASI LEMAK"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "@ From side hustle to sauce business here we go."
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [{
+    "name": "Zigzag Scroll Cards",
+    "category": "Custom"
+  }]
+}
+{% endschema %}
