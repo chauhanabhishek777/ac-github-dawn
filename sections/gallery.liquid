@@ -46,7 +46,6 @@
           <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}">
         {% endif %}
         <div class="card-text">
-          <h2>{{ block.settings.title }}</h2>
           <p>{{ block.settings.description }}</p>
         </div>
       </div>
@@ -73,12 +72,6 @@
           "type": "url",
           "id": "video_url",
           "label": "Optional Video URL (MP4 only)"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "NASI LEMAK"
         },
         {
           "type": "text",
