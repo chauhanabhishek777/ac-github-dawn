@@ -31,6 +31,14 @@
     font-size: 18px;
     color: #000;
 }
+.zigzag-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.zigzag-scroll-container {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;
+}
 @media(max-width: 1440px){
 .zigzag-card {
   flex: 0 0 25%;
@@ -47,6 +55,15 @@
 }
 }
 @media(max-width: 989px){
+.zigzag-scroll-wrapper {
+  padding-left: 30px;
+  gap: 3rem;
+}
+  .zigzag-card {
+      flex: 0 0 28%;
+  }
+}
+@media(max-width: 749px){
 .zigzag-scroll-wrapper {
   padding-left: 30px;
   gap: 3rem;
