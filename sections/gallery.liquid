@@ -1,98 +1,147 @@
 <style>
-   .zigzag-scroll-container {
-    background: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Yellow_Vector.svg?v=1754590149);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.zigzag-scroll-container {
-  overflow-x: scroll;
-  padding: 2rem 0 0;
-}
-.zigzag-scroll-wrapper {
+     .gallery {
+      background: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Yellow_Vector.svg?v=1754590149);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .zigzag-scroll-container {
+    overflow-x: scroll;
+    padding: 2rem 0 0;
+  }
+  .zigzag-scroll-wrapper {
+    display: flex;
+    gap: 6rem;
+    padding-left: 40px;
+    padding-bottom: 200px;
+  }
+  .zigzag-card {
+    position: relative;
+    width: 100%;
+    flex: 0 0 20%;
+  }
+  .zigzag-card:nth-child(even) {
+    transform: translateY(128px);
+  }
+  .zigzag-card img,
+  .zigzag-card video {
+    width: 100%;
+  }
+  .card-text p {
+      font-size: 18px;
+      color: #000;
+  }
+  .zigzag-scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .zigzag-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+.social_links {
   display: flex;
-  gap: 6rem;
-  padding-left: 40px;
-  padding-bottom: 200px;
+  flex-direction: column;
+  width: fit-content;
+  background: #F9A5F9;
+  padding: 14px;
+  gap: 5px;
+  transform: rotate(1.635deg);
+  margin-left: 40px;
 }
-.zigzag-card {
-  position: relative;
-  width: 100%;
-  flex: 0 0 20%;
-}
-.zigzag-card:nth-child(even) {
-  transform: translateY(128px); 
-}
-.zigzag-card img,
-.zigzag-card video {
-  width: 100%;
-}
-.card-text p {
-    font-size: 18px;
-    color: #000;
-}
-.zigzag-scroll-container::-webkit-scrollbar {
-  display: none;
-}
-
-.zigzag-scroll-container {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;
-}
-@media(max-width: 1440px){
-.zigzag-card {
-  flex: 0 0 25%;
-}
-}
-@media(max-width: 1250px){
-.zigzag-scroll-wrapper {
-  gap: 4rem;
-}
-}
-@media(max-width: 1000px){
-.zigzag-scroll-wrapper {
-  gap: 3rem;
-}
-}
-@media(max-width: 989px){
-.zigzag-scroll-wrapper {
-  padding-left: 30px;
-  gap: 3rem;
-}
-  .zigzag-card {
-      flex: 0 0 28%;
+  a.social_link {
+      font-size: 35px;
+    line-height: 1;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
   }
-}
-@media(max-width: 749px){
-.zigzag-scroll-wrapper {
-  padding-left: 30px;
-  gap: 3rem;
-}
-  .zigzag-card {
-      flex: 0 0 28%;
+ a.social_link span span{
+  font-family: "Have Heart Two";
   }
-}
+  a.social_link  svg{
+  width: 33px;
+    height: 33px;
+  }
+  @media(max-width: 1440px){
+  .zigzag-card {
+    flex: 0 0 25%;
+  }
+  }
+  @media(max-width: 1250px){
+  .zigzag-scroll-wrapper {
+    gap: 4rem;
+  }
+  }
+  @media(max-width: 1000px){
+  .zigzag-scroll-wrapper {
+    gap: 3rem;
+  }
+  }
+  @media(max-width: 989px){
+  .zigzag-scroll-wrapper {
+    padding-left: 30px;
+    gap: 3rem;
+  }
+    .zigzag-card {
+        flex: 0 0 28%;
+    }
+  }
+  @media(max-width: 749px){
+  .zigzag-scroll-wrapper {
+    padding-left: 30px;
+    gap: 3rem;
+  }
+    .zigzag-card {
+        flex: 0 0 28%;
+    }
+  }
 </style>
-<div class="gallery"> 
-<div class="zigzag-scroll-container">
-  <div class="zigzag-scroll-wrapper">
-    {% for block in section.blocks %}
-    <div class="zigzag-card">
-      <div class="scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
-        {% if block.settings.video_url %}
-          <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
-        {% elsif block.settings.image %}
-          <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}">
-        {% endif %}
-        <div class="card-text">
-          <p>{{ block.settings.description }}</p>
+<div class="gallery">
+  <div class="zigzag-scroll-container">
+    <div class="zigzag-scroll-wrapper">
+      {% for block in section.blocks %}
+        <div class="zigzag-card">
+          <div class="scroll-trigger animate--slide-in" data-cascade style="--animation-order: {{ forloop.index }};">
+            {% if block.settings.video_url %}
+              <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+            {% elsif block.settings.image %}
+              <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}">
+            {% endif %}
+            <div class="card-text">
+              <p>{{ block.settings.description }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+  <div class="social_links">
+    <a class="social_link" href="">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        style="    color: #fff;"
+      >
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.66601 1.6665H13.0827C15.8441 1.6665 18.0827 3.90508 18.0827 6.6665V13.0832C18.0827 15.8446 15.8441 18.0832 13.0827 18.0832H6.66601C3.90459 18.0832 1.66602 15.8446 1.66602 13.0832V6.6665C1.66602 3.90508 3.90459 1.6665 6.66601 1.6665ZM16.8327 6.6665C16.8281 4.59734 15.1518 2.92109 13.0827 2.9165H6.66601C4.59685 2.92109 2.9206 4.59734 2.91602 6.6665V13.0832C2.9206 15.1523 4.59685 16.8286 6.66601 16.8332H13.0827C15.1518 16.8286 16.8281 15.1523 16.8327 13.0832V6.6665Z" fill="#fff"></path>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.29102 9.87484C6.2956 7.89772 7.89723 6.29609 9.87435 6.2915C11.8515 6.29609 13.4531 7.89772 13.4577 9.87484C13.4577 11.8539 11.8534 13.4582 9.87435 13.4582C7.89533 13.4582 6.29102 11.8539 6.29102 9.87484ZM12.2077 9.87484C12.2077 8.58617 11.163 7.5415 9.87435 7.5415C8.58758 7.54607 7.54559 8.58807 7.54102 9.87484C7.54102 11.1635 8.58568 12.2082 9.87435 12.2082C11.163 12.2082 12.2077 11.1635 12.2077 9.87484Z" fill="#fff"></path>
+        <path d="M12.9243 5.42067C12.9243 4.92131 13.3292 4.5165 13.8285 4.5165C14.3279 4.5165 14.7327 4.92131 14.7327 5.42067C14.7327 5.92003 14.3279 6.32484 13.8285 6.32484C13.3292 6.32484 12.9243 5.92003 12.9243 5.42067Z" fill="#fff"></path>
+      </svg>
+      <span>@<span>meimeigoods</span></span>
 
+    </a>
+    <a class="social_link" href="">
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M17.875 6.69963V9.43415C17.3962 9.388 16.7764 9.27921 16.0883 9.02702C15.1908 8.69819 14.5224 8.2482 14.0856 7.89959V13.428L14.0749 13.4107C14.0823 13.5203 14.0856 13.6315 14.0856 13.7444C14.0856 16.4905 11.8522 18.7248 9.10529 18.7248C6.35842 18.7248 4.125 16.4897 4.125 13.7444C4.125 10.9992 6.35842 8.76329 9.10529 8.76329C9.37396 8.76329 9.63768 8.78472 9.89564 8.82593V11.5217C9.64757 11.4327 9.3822 11.3849 9.10529 11.3849C7.80479 11.3849 6.74577 12.4431 6.74577 13.7444C6.74577 15.0458 7.80479 16.104 9.10529 16.104C10.4058 16.104 11.4648 15.0449 11.4648 13.7444C11.4648 13.6958 11.464 13.6472 11.4607 13.5986V2.85498H14.1944C14.2043 3.08657 14.2142 3.3198 14.2232 3.55138C14.2413 4.00714 14.4037 4.44476 14.6864 4.80326C15.0185 5.2244 15.5081 5.71395 16.197 6.10459C16.8415 6.46969 17.4464 6.62628 17.875 6.70045V6.69963Z" fill="#fff"></path>
+      </svg>
+      <span>@<span>meimeigoods</span></span>
+    </a>
+  </div>
 </div>
 {% schema %}
 {
@@ -123,9 +172,11 @@
     }
   ],
   "max_blocks": 10,
-  "presets": [{
-    "name": "Zigzag Scroll Cards",
-    "category": "Custom"
-  }]
+  "presets": [
+    {
+      "name": "Zigzag Scroll Cards",
+      "category": "Custom"
+    }
+  ]
 }
 {% endschema %}
