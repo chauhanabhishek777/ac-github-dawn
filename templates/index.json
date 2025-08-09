@@ -89,7 +89,7 @@
       ],
       "name": "Zigzag Scroll Cards",
       "settings": {
-        "g_info": "We’re bold, proud,and probably stirringsomething up."
+        "g_info": "We’re bold, proud,<br>and probably stirring <br>something up."
       }
     },
     "image_banner": {
