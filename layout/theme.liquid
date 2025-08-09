@@ -46,8 +46,22 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
+    <link rel="stylesheet" href="https://use.typekit.net/fln5oxa.css">
+ 
 
     {% style %}
+     @font-face {
+        font-family: 'agency';
+        src: url('https://cdn.shopify.com/s/files/1/0268/6435/3393/files/agency.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
+       @font-face {
+        font-family: "Have Heart Two";
+        src: url('https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Have_Heart_Two.otf?v=1754495588') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+      }
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}
