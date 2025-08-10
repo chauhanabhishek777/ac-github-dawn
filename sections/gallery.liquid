@@ -1,11 +1,21 @@
 <style>
      .gallery {
-      background: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Yellow_Vector.svg?v=1754590149);
+      {% comment %} background: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Yellow_Vector.svg?v=1754590149);
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      background-repeat: no-repeat; {% endcomment %}
       padding-top: 120px;
       padding-bottom: 60px;
+      position: relative;
+  }
+  .gallery::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: yellow;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 70%);
+  z-index: -1;
+}
   }
   .zigzag-scroll-container {
     overflow-x: scroll;
