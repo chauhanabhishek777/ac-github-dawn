@@ -2814,7 +2814,7 @@ details[open] > .header__submenu {
 .header__menu-item span::after {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: -3px;
     left: 0;
     width: 100%;
     height: 3px;
