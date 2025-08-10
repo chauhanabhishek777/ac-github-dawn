@@ -2808,6 +2808,7 @@ details[open] > .header__submenu {
 .header__menu-item:hover span {
   text-decoration: underline;
   text-underline-offset: 0.5rem;
+  color: #B580D1;
 }
 
 details[open] > .header__menu-item {
