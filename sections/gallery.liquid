@@ -1,13 +1,10 @@
 <style>
-     .gallery {
-      {% comment %} background: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Yellow_Vector.svg?v=1754590149);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat; {% endcomment %}
-      padding-top: 120px;
-      padding-bottom: 60px;
-      position: relative;
-  }
+  .gallery {
+  padding-top: 120px;
+  padding-bottom: 60px;
+  position: relative;
+}
+
 .gallery::before {
   content: "";
   position: absolute;
@@ -15,42 +12,49 @@
   background: #FFD100;
   clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 55%);
   z-index: -1;
-  }
-  .zigzag-scroll-container {
-    overflow-x: scroll;
-    padding: 2rem 0 0;
-  }
-  .zigzag-scroll-wrapper {
-    display: flex;
-    gap: 6rem;
-    padding-left: 40px;
-    padding-bottom: 260px;
-  }
-  .zigzag-card {
-    position: relative;
-    width: 100%;
-    flex: 0 0 20%;
-  }
-  
-  .zigzag-card:nth-child(even) {
-    transform: translateY(128px);
-  }
-  .zigzag-card img,
-  .zigzag-card video {
-    width: 100%;
-  }
-  .card-text p {
-      font-size: 18px;
-      color: #000;
-  }
-  .zigzag-scroll-container::-webkit-scrollbar {
-    display: none;
-  }
+}
 
-  .zigzag-scroll-container {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
+.zigzag-scroll-container {
+  overflow-x: scroll;
+  padding: 2rem 0 0;
+}
+
+.zigzag-scroll-wrapper {
+  display: flex;
+  gap: 6rem;
+  padding-left: 40px;
+  padding-bottom: 260px;
+}
+
+.zigzag-card {
+  position: relative;
+  width: 100%;
+  flex: 0 0 20%;
+}
+
+.zigzag-card:nth-child(even) {
+  transform: translateY(128px);
+}
+
+.zigzag-card img,
+.zigzag-card video {
+  width: 100%;
+}
+
+.card-text p {
+  font-size: 18px;
+  color: #000;
+}
+
+.zigzag-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.zigzag-scroll-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .social_links {
   display: flex;
   flex-direction: column;
@@ -61,184 +65,228 @@
   transform: rotate(1.635deg);
   margin-left: 40px;
   position: absolute;
-    bottom: 60px;
-
+  bottom: 60px;
 }
-  a.social_link {
-      font-size: 35px;
-    line-height: 1;
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-  }
- a.social_link span span{
+
+a.social_link {
+  font-size: 35px;
+  line-height: 1;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+a.social_link span span {
   font-family: "Have Heart Two";
-  }
-  a.social_link  svg{
+}
+
+a.social_link svg {
   width: 33px;
-    height: 33px;
-  }
-  .gallery-info{
-   padding-bottom: 120px;
-    display: flex;
-    justify-content: center;
-  }
-  .g-info h2{
-    font-size: 100px;
-    font-family: var(--font-heading-family);
-    font-weight: 400;
-    color: #fff;
-    margin-bottom: 40px;
-    line-height: 1;
-    margin-top: 0;
-  }
-  .g-info h3{
-    font-family: var(--font-heading-family);
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 1;
-    margin: 0;
-  }
-  .g-video{
-    position: relative;
-    width: 151px;
-  }
-  .g-video img, .g-video video{
+  height: 33px;
+}
+
+.gallery-info {
+  padding-bottom: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.g-info h2 {
+  font-size: 100px;
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 40px;
+  line-height: 1;
+}
+
+.g-info h3 {
+  font-family: var(--font-heading-family);
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  margin: 0;
+}
+
+.g-video {
+  position: relative;
+  width: 151px;
+}
+
+.g-video img,
+.g-video video {
   position: absolute;
-    bottom: -70px;
-    right: -36px;
-  }
-  @media(max-width: 1440px){
+  bottom: -70px;
+  right: -36px;
+}
+
+/* -------------------
+   Responsive Styles
+-------------------- */
+@media (max-width: 1440px) {
   .zigzag-card {
     flex: 0 0 25%;
   }
-  }
-  @media(max-width: 1350px){
-    .g-info h2 {
+}
+
+@media (max-width: 1350px) {
+  .g-info h2 {
     font-size: 80px;
   }
-  .g-info h3{
-        font-size: 30px;
+
+  .g-info h3 {
+    font-size: 30px;
   }
-   .g-video img, .g-video video {
+
+  .g-video img,
+  .g-video video {
     right: 0;
-} 
   }
-  @media(max-width: 1250px){
+}
+
+@media (max-width: 1250px) {
   .zigzag-scroll-wrapper {
     gap: 4rem;
   }
-  }
-  
-  @media(max-width: 1150px){
+}
+
+@media (max-width: 1150px) {
   .g-info h2 {
     font-size: 63px;
   }
-  .g-info h3{
+
+  .g-info h3 {
     font-size: 26px;
   }
-  .gallery-info{
+
+  .gallery-info {
     padding-left: 80px;
     padding-right: 80px;
-    }
-  
   }
-  @media(max-width: 1000px){
+}
+
+@media (max-width: 1000px) {
   .zigzag-scroll-wrapper {
     gap: 3rem;
   }
-  }
-  @media(max-width: 989px){
-    a.social_link svg {
+}
+
+@media (max-width: 989px) {
+  a.social_link svg {
     width: 28px;
     height: 28px;
-}
-a.social_link {
+  }
+
+  a.social_link {
     font-size: 30px;
   }
-        .gallery-info {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    .g-video img, .g-video video{
+
+  .gallery-info {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .g-video img,
+  .g-video video {
     max-width: 100px;
-    }
+  }
+
   .g-info h2 {
     font-size: 50px;
     line-height: 1.2;
-        margin-bottom: 30px;
-}
-      .g-info h3 {
-        font-size: 22px;
-    }
-    .card-text p {
+    margin-bottom: 30px;
+  }
+
+  .g-info h3 {
+    font-size: 22px;
+  }
+
+  .card-text p {
     font-size: 16px;
   }
+
   .zigzag-scroll-wrapper {
     padding-left: 30px;
     gap: 3rem;
   }
-    .zigzag-card {
-        flex: 0 0 28%;
-    }
+
+  .zigzag-card {
+    flex: 0 0 28%;
   }
-  @media(max-width: 749px){
-    .gallery-info{
-            flex-direction: column;
-        gap: 36px;
-    }
-    .g-info h2{
-          font-size: 42px;
-    }
-    .zigzag-scroll-wrapper {
-        padding-left: 10px;
-        gap: 1rem;
-    }
-     .card-text p {
+}
+
+@media (max-width: 749px) {
+  .gallery-info {
+    flex-direction: column;
+    gap: 36px;
+    padding-bottom: 0;
+  }
+
+  .g-info h2 {
+    font-size: 42px;
+  }
+
+  .zigzag-scroll-wrapper {
+    padding-left: 10px;
+    gap: 1rem;
+    padding-bottom: 200px;
+  }
+
+  .card-text p {
     font-size: 14px;
   }
-    .zigzag-card {
-        flex: 0 0 45%;
-    }
-    .g-video img, .g-video video {
+
+  .zigzag-card {
+    flex: 0 0 45%;
+  }
+
+  .g-video img,
+  .g-video video {
     position: relative;
     bottom: unset;
     right: unset;
-}
-.gallery-info {
-    padding-bottom: 0;
-}
-.g-video img, .g-video video {
-        max-width: 70px;
-    }
-.g-video {
+    max-width: 70px;
+  }
+
+  .g-video {
     width: auto;
     margin-left: auto;
-}
-.gallery {
-    padding-top: 60px;}
-
   }
-    @media(max-width: 560px){
-      .g-info h2 br:first-child{
-      display: none;
-      }
-      .gallery-info {
-        gap: 20px;
-    }
-      .social_links{
-          position: absolute;
+
+  .gallery {
+    padding-top: 60px;
+  }
+
+  .zigzag-card:nth-child(even) {
+    transform: translateY(90px);
+  }
+}
+
+@media (max-width: 560px) {
+  .g-info h2 br:first-child {
+    display: none;
+  }
+
+  .gallery-info {
+    gap: 20px;
+  }
+
+  .social_links {
+    position: absolute;
     bottom: 40px;
-      }
-    .zigzag-card:nth-child(even) {
+  }
+
+  .zigzag-card:nth-child(even) {
     transform: translateY(60px);
+  }
+
+  .zigzag-scroll-wrapper {
+    padding-bottom: 160px;
+  }
 }
-.zigzag-scroll-wrapper {
-   padding-bottom: 160px;
-}
-    }
+
 </style>
 <div class="gallery">
   <div class="gallery-info">
@@ -282,7 +330,6 @@ a.social_link {
         <path d="M12.9243 5.42067C12.9243 4.92131 13.3292 4.5165 13.8285 4.5165C14.3279 4.5165 14.7327 4.92131 14.7327 5.42067C14.7327 5.92003 14.3279 6.32484 13.8285 6.32484C13.3292 6.32484 12.9243 5.92003 12.9243 5.42067Z" fill="#fff"></path>
       </svg>
       <span>@<span>meimeigoods</span></span>
-
     </a>
     <a class="social_link" href="">
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -299,7 +346,7 @@ a.social_link {
     {
       "type": "richtext",
       "id": "g_info",
-      "label": "Description",
+      "label": "Description"
     }
   ],
   "blocks": [
