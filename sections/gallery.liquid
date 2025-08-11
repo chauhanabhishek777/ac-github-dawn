@@ -334,7 +334,7 @@ color:#000;
     <div class="zigzag-scroll-wrapper">
       {% for block in section.blocks %}
         <a class="zigzag-card" href="https://instagram.com/meimeilondon"  target="blank" >
-          <div class=""  data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}" data-aos-duration="800" data-aos-offset="300">
+          <div class=""  data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}" data-aos-duration="800" data-aos-offset="100">
             {% if block.settings.video_url %}
               <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
             {% elsif block.settings.image %}
