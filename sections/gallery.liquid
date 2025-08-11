@@ -65,10 +65,14 @@
   position: absolute;
   bottom: 100px;
   right: 25px;
+  opacity: 0;
   visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
 }
 .zigzag-card:hover .insta-popup {
-visibility: visible;
+  opacity: 1;
+  transform: rotate(-9.698deg) translateY(0);
+  visibility: visible;
 }
 .social_links {
   display: flex;
