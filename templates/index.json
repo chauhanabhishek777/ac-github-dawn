@@ -16,7 +16,7 @@
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/f3413ccf4dba4a9db981477d9b291d0c.mp4",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         },
@@ -24,7 +24,7 @@
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/a9f2d611a32a46389a323e33f6625d67.mp4",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         },
@@ -32,31 +32,71 @@
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/6feef96949bf416194f2f2a4ed274dc9.mp4",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         },
-        "media_card_YBkxcw": {
+        "media_card_aEgX7k": {
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/f3413ccf4dba4a9db981477d9b291d0c.mp4",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         },
-        "media_card_tYdGnP": {
+        "media_card_MgippQ": {
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/a9f2d611a32a46389a323e33f6625d67.mp4",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         },
-        "media_card_AU8Gqw": {
+        "media_card_a4XcQh": {
           "type": "media_card",
           "settings": {
             "image": "shopify://shop_images/Rectangle_604.png",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/6feef96949bf416194f2f2a4ed274dc9.mp4",
+            "video_url": "",
+            "description": "@ From side hustle to sauce business here we go."
+          }
+        },
+        "media_card_qdbhPd": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_604.png",
+            "video_url": "",
+            "description": "@ From side hustle to sauce business here we go."
+          }
+        },
+        "media_card_JGw6t7": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_604.png",
+            "video_url": "",
+            "description": "@ From side hustle to sauce business here we go."
+          }
+        },
+        "media_card_a4XcQh": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_604.png",
+            "video_url": "",
+            "description": "@ From side hustle to sauce business here we go."
+          }
+        },
+        "media_card_qdbhPd": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_604.png",
+            "video_url": "",
+            "description": "@ From side hustle to sauce business here we go."
+          }
+        },
+        "media_card_JGw6t7": {
+          "type": "media_card",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_604.png",
+            "video_url": "",
             "description": "@ From side hustle to sauce business here we go."
           }
         }
@@ -65,9 +105,11 @@
         "media_card_9rBYRj",
         "media_card_rFzazy",
         "media_card_RVpgnr",
-        "media_card_YBkxcw",
-        "media_card_tYdGnP",
-        "media_card_AU8Gqw"
+        "media_card_aEgX7k",
+        "media_card_MgippQ",
+        "media_card_a4XcQh",
+        "media_card_qdbhPd",
+        "media_card_JGw6t7"
       ],
       "name": "Zigzag Scroll Cards",
       "settings": {
