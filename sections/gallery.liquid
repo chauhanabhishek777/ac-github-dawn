@@ -261,10 +261,10 @@ a.social_link svg {
 }
 
 @media (max-width: 560px) {
-  .g-info h2 br:first-child {
-    display: none;
-  }
-
+ 
+  .g-info h2 {
+      font-size: 32px;
+    }
   .gallery-info {
     gap: 20px;
   }
@@ -278,11 +278,24 @@ a.social_link svg {
     transform: translateY(60px);
   }
 
+  .zigzag-card {
+        flex: 0 0 70%;
+  }
+
   .zigzag-scroll-wrapper {
     padding-bottom: 160px;
   }
 }
-
+@media (max-width: 388px) {
+ .g-info h2 {
+      font-size: 30px;
+    }
+}
+@media (max-width: 370px) {
+ .g-info h2 br{
+      display: none;
+    }
+}
 </style>
 <div class="gallery">
   <div class="gallery-info">
