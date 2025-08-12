@@ -322,6 +322,15 @@ color:#000;
       display: none;
     }
 }
+.zigzag-card_animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.zigzag-card_animation.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>
 <div class="gallery">
   <div class="gallery-info">
@@ -337,7 +346,7 @@ color:#000;
     <div class="zigzag-scroll-wrapper">
       {% for block in section.blocks %}
         <a class="zigzag-card" href="https://instagram.com/meimeilondon"  target="blank" >
-          <div class=""  data-aos="fade-up" data-aos-delay="{{ forloop.index0 | times: 100 }}" data-aos-duration="800" data-aos-offset="100" data-aos-once="true">
+          <div class="zigzag-card_animation">
             {% if block.settings.video_url %}
               <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
             {% elsif block.settings.image %}
@@ -375,6 +384,26 @@ color:#000;
     </a>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const videos = document.querySelectorAll(".zigzag-card_animation");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting && !entry.target.classList.contains("in-view")) {
+        setTimeout(() => {
+          entry.target.classList.add("in-view");
+        }, index * 150); // 150ms gap between animations
+      }
+    });
+  }, {
+    threshold: 0.1 // 30% visibility triggers
+  });
+
+  videos.forEach(video => observer.observe(video));
+});
+
+</script>
 {% schema %}
 {
   "name": "Zigzag Scroll Section",
