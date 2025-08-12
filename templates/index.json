@@ -173,7 +173,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<h1 id=\"animated\">Hello word</h1>",
+        "custom_liquid": "<h1 id=\"animated\">Hello word</h1>\n<script>function updateText(text){\n\nlet delay = 200;\n\n\tlet h1 = document.getElementById(\"animated\");\n\n      h1.innerHTML = text\n        .split(\"\")\n        .map(letter => {\n          console.log(letter);\n          return `<span>` + letter + `</span>`;\n        })\n        .join(\"\");\n\n      Array.from(h1.children).forEach((span, index) => {\n        setTimeout(() => {\n          span.classList.add(\"wavy\");\n        }, index * 60 + delay);\n      });\n\n}\n\ndocument.getElementById('textField').addEventListener('input', (event)=>{\n\tupdateText(event.target.value);\n})\n\nupdateText(\"Hello, World.\");</script>",
         "color_scheme": "",
         "padding_top": 40,
         "padding_bottom": 52
