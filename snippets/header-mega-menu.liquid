@@ -6,6 +6,7 @@
 {% endcomment %}
 
 <nav class="header__inline-menu">
+  
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
@@ -30,6 +31,7 @@
                 class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
                 tabindex="-1"
               >
+                <img class="round-ball" src="https://cdn.shopify.com/s/files/1/0268/6435/3393/files/yello_smiley.png?v=1755260541">
                 <ul
                   class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
