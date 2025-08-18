@@ -23,7 +23,7 @@
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {% for block in section.blocks %}
                 {%- for link in block.settings.drawer_linklist.links -%}
-                  <li class="abhi-image-li" data-id="{{ link.handle }}">
+                  <li class="abhi-image-li" data-id="ca-{{ link.handle }}">
                     {%- if link.links != blank -%}
                       <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                         <summary
@@ -141,13 +141,15 @@
             </div>
           
           <div class="menu-side-img">
+            {% if link.handle == 'shop' %}
             <img
               class=" menu-img_3 img_{{link.handle}}"
               data-id="ca-{{link.handle}}"
+              data-id="ca-{{ link.handle }}"
               src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Plant_Girl_image_-_Mundane_asset.png"
               style="display: block;"
             >
-
+            {% endif %}
             <img
               class=" menu-img_3 img_{{link.handle}}"
               data-id="ca-{{link.handle}}"
