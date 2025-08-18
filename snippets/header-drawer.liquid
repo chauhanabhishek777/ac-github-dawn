@@ -139,8 +139,7 @@
             <div class="close-header-drawer">
               <span class="big_cross_icon"></span>
             </div>
-          </nav>
-          {%- render 'social-icons', class: 'header__list-social' -%}
+            {%- render 'social-icons', class: 'header__list-social' -%}
           <div class="menu-side-img">
             <img
               class=" menu-img_3 img_{{link.handle}}"
@@ -177,6 +176,8 @@
               style="display: none;"
             >
           </div>
+          </nav>
+          
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
@@ -355,5 +356,49 @@
     setTimeout(() => {
       menuDrawer.style.transform = ''; // Reset to default
     }, 700); // 1 second delay
+  });
+</script>
+<script>
+  const menuItems = document.querySelectorAll('.menu-drawer__menu-item');
+  const navigation = document.querySelector('.menu-drawer__navigation-container');
+
+  menuItems.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      let bgColor = ''; // Default empty color
+      let bgImage = '';
+
+      switch (item.id) {
+        case 'HeaderDrawer-shop':
+          bgColor = '#FFD683';
+          break;
+        case 'HeaderDrawer-gifting':
+          bgColor = '#9CD98B';
+          break;
+        case 'HeaderDrawer-about':
+          bgColor = '#FFDBE5';
+          bgImage = "url('https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Sparkle_heart_assets.png')";
+          break;
+        case 'HeaderDrawer-faq-contact':
+          bgColor = '#FCAB5D';
+          break;
+        case 'HeaderDrawer-contact':
+          bgColor = '#A7E1D3';
+          break;
+          case 'HeaderDrawer-blog':
+          bgColor = '#FFD683';
+          break;
+            case 'HeaderDrawer-onomy-studio':
+          bgColor = '#9CD98B';
+          break;
+      }
+
+      navigation.style.backgroundColor = bgColor; // Apply background color
+      navigation.style.backgroundImage = bgImage;
+    });
+
+    item.addEventListener('mouseleave', () => {
+      navigation.style.backgroundColor = ''; // Reset background color
+      navigation.style.backgroundImage = '';
+    });
   });
 </script>
