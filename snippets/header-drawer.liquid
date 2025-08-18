@@ -23,7 +23,7 @@
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {% for block in section.blocks %}
                 {%- for link in block.settings.drawer_linklist.links -%}
-                  <li data-id="{{ link.handle }}">
+                  <li class="abhi-image-li" data-id="{{ link.handle }}">
                     {%- if link.links != blank -%}
                       <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                         <summary
