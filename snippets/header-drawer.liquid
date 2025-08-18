@@ -365,7 +365,7 @@
   menuItems.forEach((item) => {
     item.addEventListener('mouseenter', () => {
       let bgColor = ''; // Default empty color
-      let bgImage = '';
+      {% comment %} let bgImage = ''; {% endcomment %}
 
       switch (item.id) {
         case 'HeaderDrawer-shop':
