@@ -152,33 +152,46 @@
               style="display: block;"
             >
             {% endif %}
+             {% if link.handle == 'restaurant' %}
             <img
               class=" menu-img_3 img_{{link.handle}}"
               data-id="ca-{{link.handle}}"
               src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Scooter_Guy_Image_-_Mundane_asset.png"
               style="display: none;"
             >
-
-            <img
-              class="menu-img menu-img_3 img_{{link.handle}}"
-              data-id="ca-{{link.handle}}"
-              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Dog_Image_-_Mandane_asset.png"
-              style="display: none;"
-            >
-
+            {% endif %}
+           {% if link.handle == 'restaurant' %}
             <img
               class=" menu-img_3 img_{{link.handle}}"
               data-id="ca-{{link.handle}}"
-              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Group_402_2.png"
+              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Scooter_Guy_Image_-_Mundane_asset.png"
               style="display: none;"
             >
-
+            {% endif %}
+            {% if link.handle == 'about' %}
             <img
-              class="menu-img menu-img_3 img_{{link.handle}}"
+              class=" menu-img_3 img_{{link.handle}}"
               data-id="ca-{{link.handle}}"
-              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Plant_Girl_image_-_Mundane_asset_2.png"
+              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Scooter_Guy_Image_-_Mundane_asset.png"
               style="display: none;"
             >
+            {% endif %}
+             {% if link.handle == 'faq-contact' %}
+            <img
+              class=" menu-img_3 img_{{link.handle}}"
+              data-id="ca-{{link.handle}}"
+              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Scooter_Guy_Image_-_Mundane_asset.png"
+              style="display: none;"
+            >
+            {% endif %}
+            {% if link.handle == 'wholesale' %}
+            <img
+              class=" menu-img_3 img_{{link.handle}}"
+              data-id="ca-{{link.handle}}"
+              src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Scooter_Guy_Image_-_Mundane_asset.png"
+              style="display: none;"
+            >
+            {% endif %}
               {% endfor %}
               {% endfor %}
           </div>
