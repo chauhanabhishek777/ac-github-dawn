@@ -21,7 +21,8 @@
         <div class="menu-drawer__navigation-container">
           <nav class="menu-drawer__navigation">
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
-              {%- for link in section.settings.menu.links -%}
+              {% for block in section.blocks %}
+              {%- for link in block.settings.drawer_linklist.links -%}
                 <li>
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -132,9 +133,14 @@
                     </a>
                   {%- endif -%}
                 </li>
+                   {%- endfor -%}
               {%- endfor -%}
             </ul>
+             <div class="close-header-drawer">
+              <span class="big_cross_icon"></span>
+            </div>
           </nav>
+           {%- render 'social-icons', class: 'header__list-social' -%}
           <div class="menu-drawer__utility-links">
             {%- if shop.customer_accounts_enabled -%}
               <a
@@ -293,3 +299,25 @@
     </div>
   </details>
 </header-drawer>
+<script>
+  document.querySelector('.close-header-drawer').addEventListener('click', function () {
+    let detailsElement = document.getElementById('Details-menu-drawer-container');
+    const bodyElement = document.body;
+
+    // Instead of removing 'menu-opening' immediately, wait for the transition
+    setTimeout(() => {
+      detailsElement.removeAttribute('open');
+      detailsElement.classList.remove('menu-opening');
+      bodyElement.classList.remove('overflow-hidden-tablet');
+    }, 500); // Adjust this based on your CSS transition duration (e.g., 300ms)
+  });
+
+  document.querySelector('.close-header-drawer').addEventListener('click', function () {
+    let menuDrawer = document.querySelector('#menu-drawer');
+    menuDrawer.style.transform = 'translate(-100%)';
+
+    setTimeout(() => {
+      menuDrawer.style.transform = ''; // Reset to default
+    }, 700); // 1 second delay
+  });
+</script>
