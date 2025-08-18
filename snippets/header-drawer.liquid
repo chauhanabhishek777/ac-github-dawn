@@ -358,7 +358,7 @@
     }, 700); // 1 second delay
   });
 </script>
-{% comment %} <script>
+<script>
   const menuItems = document.querySelectorAll('.menu-drawer__menu-item');
   const navigation = document.querySelector('.menu-drawer__navigation-container');
 
@@ -391,26 +391,4 @@
       navigation.style.backgroundColor = ''; // Reset background color
     });
   });
-</script> {% endcomment %}
-<script>
-  const overlay = document.querySelector('.menu-drawer__navigation-container .overlay');
-
-menuItems.forEach((item) => {
-  item.addEventListener('mouseenter', () => {
-    let color = 'transparent';
-    switch (item.id) {
-      case 'HeaderDrawer-shop': color = 'rgba(249,165,249,0.6)'; break;
-      case 'HeaderDrawer-restaurant': color = 'rgba(255,209,0,0.6)'; break;
-      case 'HeaderDrawer-about': color = 'rgba(244,54,76,0.6)'; break;
-      case 'HeaderDrawer-faq-contact': color = 'rgba(71,215,172,0.6)'; break;
-      case 'HeaderDrawer-wholesale': color = 'rgba(181,128,209,0.6)'; break;
-    }
-    overlay.style.backgroundColor = color;
-  });
-
-  item.addEventListener('mouseleave', () => {
-    overlay.style.backgroundColor = 'transparent';
-  });
-});
-
 </script>
