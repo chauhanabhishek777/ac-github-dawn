@@ -282,13 +282,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-side-img {
   width: 50%;
 }
-.menu-img_3.img_about[data-id="ca-about"] {
-  width: 100%;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 0;
-}
+
 .menu-side-img img {
   display: none;
 }
