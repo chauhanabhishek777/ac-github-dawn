@@ -306,34 +306,6 @@ details[open].menu-opening > .menu-drawer__submenu {
   left: 48%;
   transform: translate(-50%, -50%);
 }
-.cross-orange .big_cross_icon:before,
-.cross-orange .big_cross_icon:after {
-  background-color: #fcab5d;
-}
-.cross-green .big_cross_icon:before,
-.cross-green .big_cross_icon:after {
-  background-color: #488836;
-}
-.cross-pink .big_cross_icon:before,
-.cross-pink .big_cross_icon:after {
-  background-color: #ff8382;
-}
-.cross-green .close-header-drawer svg {
-  fill: E3F9CB;
-}
-.cross-green .list-socials svg path {
-  fill: #488836;
-}
-.cross-orange .list-socials svg path {
-  fill: #fcab5d;
-}
-.cross-pink .list-socials svg path {
-  fill: #ff8382;
-}
-.close-header-drawer svg {
-  width: 120px;
-  height: 120px;
-}
 
 .big_cross_icon:before,
 .big_cross_icon:after {
@@ -364,7 +336,6 @@ details[open].menu-opening > .menu-drawer__submenu {
   align-items: center;
 }
 .menu-drawer__navigation-container {
-  background: #FFD683;
   display: flex;
   align-items: center;
   justify-content: start;
