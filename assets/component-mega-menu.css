@@ -1,7 +1,13 @@
 .mega-menu {
   position: static;
 }
-
+.menu-drawer{
+  background-color: #F9A5F9;
+    background-image: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Mei_Mei_fade_loop_Asset_1.png?v=1755263075);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+}
 .mega-menu__content {
   background-color: rgb(var(--color-background));
   border-left: 0;
@@ -9,8 +15,8 @@
   border-right: 0;
   left: 0;
   overflow-y: auto;
-  padding-bottom: 3rem;
-  padding-top: 3rem;
+  padding-bottom: 12rem;
+  padding-top: 6rem;
   position: absolute;
   right: 0;
   top: 100%;
@@ -42,18 +48,24 @@
 }
 
 .mega-menu__link {
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
   display: block;
-  line-height: calc(1 + 0.3 / var(--font-body-scale));
-  padding-bottom: 0.6rem;
-  padding-top: 0.6rem;
+  line-height: 1;
+  padding-bottom: 14px;
+  padding-top: 14px;
   text-decoration: none;
   transition: text-decoration var(--duration-short) ease;
   word-wrap: break-word;
+  font-size: 20px;
+  font-family: var(--font-heading-family);
 }
 
 .mega-menu__link--level-2 {
-  font-weight: bold;
+    font-weight: 400;
+    line-height: 1;
+    font-size: 30px;
+    font-family: var(--font-heading-family);
+    color: #fff;
 }
 
 .header--top-center .mega-menu__list {
@@ -70,8 +82,8 @@
 
 .mega-menu__link:hover,
 .mega-menu__link--active {
-  color: rgb(var(--color-foreground));
-  text-decoration: underline;
+  /* color: rgb(var(--color-foreground)); */
+  /* text-decoration: underline; */
 }
 
 .mega-menu__link--active:hover {
@@ -84,4 +96,10 @@
 
 .mega-menu__list--condensed .mega-menu__link {
   font-weight: normal;
+}
+img.round-ball {
+    position: absolute;
+    max-width: 100px;
+    bottom: 50px;
+    left: 170px;
 }
