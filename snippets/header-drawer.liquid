@@ -141,6 +141,8 @@
             </div>
           
           <div class="menu-side-img">
+             {% for block in section.blocks %}
+                {%- for link in block.settings.drawer_linklist.links -%}
             {% if link.handle == 'shop' %}
             <img
               class=" menu-img_3 img_{{link.handle}}"
@@ -177,6 +179,8 @@
               src="https://cdn.shopify.com/s/files/1/0948/8623/2404/files/Plant_Girl_image_-_Mundane_asset_2.png"
               style="display: none;"
             >
+              {% endfor %}
+              {% endfor %}
           </div>
           </nav>
           {%- render 'social-icons', class: 'header__list-social' -%}
