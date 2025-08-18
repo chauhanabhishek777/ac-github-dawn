@@ -392,3 +392,58 @@
     });
   });
 </script>
+<script>
+  function handleHoverEvents() {
+    const shouldEnable = window.innerWidth > 749;
+    const items = document.querySelectorAll('li[data-id]');
+    const images = document.querySelectorAll('img[data-id]');
+
+    function showImageById(id) {
+      images.forEach(img => img.style.display = 'none');
+      const img = document.querySelector('img[data-id="' + id + '"]');
+      if (img) img.style.display = 'block';
+    }
+
+    // ✅ Show first image by default
+    if (items.length > 0) {
+      const firstId = items[0].getAttribute('data-id');
+      showImageById(firstId);
+    }
+
+    items.forEach((li) => {
+      const enterHandler = () => {
+        const id = li.getAttribute('data-id');
+        showImageById(id);
+      };
+
+      const leaveHandler = () => {
+        // ✅ Delay check (to avoid flicker when moving between LIs)
+        setTimeout(() => {
+          if (![...items].some(item => item.matches(':hover'))) {
+            // If NO LI is hovered → show first image
+            if (items.length > 0) {
+              const firstId = items[0].getAttribute('data-id');
+              showImageById(firstId);
+            }
+          }
+        }, 50);
+      };
+
+      if (shouldEnable) {
+        li.addEventListener('mouseenter', enterHandler);
+        li.addEventListener('mouseleave', leaveHandler);
+        li._hoverHandlers = { enterHandler, leaveHandler };
+      } else if (li._hoverHandlers) {
+        li.removeEventListener('mouseenter', li._hoverHandlers.enterHandler);
+        li.removeEventListener('mouseleave', li._hoverHandlers.leaveHandler);
+        delete li._hoverHandlers;
+      }
+    });
+  }
+
+  // Initial run
+  handleHoverEvents();
+
+  // Recheck on resize
+  window.addEventListener('resize', handleHoverEvents);
+</script>
