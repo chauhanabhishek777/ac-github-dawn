@@ -23,7 +23,7 @@
   }
   header.header{
   max-width: 100%;
-  padding: 35px 40px;
+  padding: 20px 40px !important
   }
   .header__menu-item span{
     font-size: 20px;
@@ -34,8 +34,42 @@
     background: #FFD100;
 }
 .header__icon .icon{
-stroke: #000;
-    stroke-width: 2px;
+  stroke: #000;
+  stroke-width: 2px;
+}
+.icon.icon-hamburger{
+    width: 28px;
+    height: 28px;
+}
+ .mega-menu__content {
+    background-color: #FFD100;
+    background-image: url(https://cdn.shopify.com/s/files/1/0268/6435/3393/files/Mei_Mei_Stacked_White.png?v=1755260290);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: -100% 0;
+    animation: slideBackground 2s ease-in-out forwards;
+
+}
+ .menu-opening .mega-menu__content {
+  animation: slideBackground 1.5s ease forwards;
+}
+@keyframes slideBackground {
+  0% {
+    background-position: -100% 0; /* Start from left */
+  }
+  100% {
+    background-position: 0 0; /* Move to original position */
+  }
+}
+.mega-menu__list{
+max-width: 100%;
+}
+
+@media(max-width: 989px){
+header.header {
+    max-width: 100%;
+    padding: 20px 15px !important;
+}
 }
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
@@ -46,7 +80,7 @@ stroke: #000;
   {%- if section.settings.menu_type_desktop != "drawer" -%}
     @media screen and (min-width: 990px) {
       header-drawer {
-        display: none;
+        {% comment %} display: none; {% endcomment %}
       }
     }
   {%- endif -%}
@@ -153,15 +187,22 @@ stroke: #000;
   -%}
   <header class="header header--{{ section.settings.logo_position }} header--mobile-{{ section.settings.mobile_logo_position }} page-width{% if section.settings.menu_type_desktop == 'drawer' %} drawer-menu{% endif %}{% if section.settings.menu != blank %} header--has-menu{% endif %}{% if has_app_block %} header--has-app{% endif %}{% if social_links %} header--has-social{% endif %}{% if shop.customer_accounts_enabled %} header--has-account{% endif %}{% if localization_forms %} header--has-localizations{% endif %}">
     {%- liquid
-      if section.settings.menu != blank
-        render 'header-drawer'
-      endif
+    
 
       if section.settings.logo_position == 'top-center' or section.settings.menu == blank
         render 'header-search', input_id: 'Search-In-Modal-1'
       endif
     -%}
-
+      {% for block in section.blocks %}
+         {% case block.type %}
+          {% when 'drawer-menu'  %}
+            {% assign menu = block.settings.drawer_linklist %}
+         {%  if section.settings.menu != blank %}
+          {% render 'header-drawer' %}
+         {% endif %}
+          {% else %}
+        {% endcase %}
+      {% endfor %}
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
         <h1 class="header__heading">
@@ -667,6 +708,19 @@ stroke: #000;
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "drawer-menu",
+      "name": "Drawer Menu",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "link_list",
+          "id": "drawer_linklist",
+          "label": "drawer Menu",
+          "default": "main-menu"
+        }
+      ]
     }
   ]
 }
