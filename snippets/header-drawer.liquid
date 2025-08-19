@@ -409,11 +409,25 @@
     const items = document.querySelectorAll('li[data-id]');
     const images = document.querySelectorAll('img[data-id]');
 
-    function showImageById(id) {
+    {% comment %} function showImageById(id) {
       images.forEach(img => img.style.display = 'none');
       const img = document.querySelector('img[data-id="' + id + '"]');
       if (img) img.style.display = 'block';
-    }
+    } {% endcomment %}
+    function showImageById(id) {
+  images.forEach(img => {
+    img.classList.remove('active');
+    img.style.display = 'none';
+  });
+
+  const img = document.querySelector('img[data-id="' + id + '"]');
+  if (img) {
+    img.style.display = 'block';
+    // Force reflow for animation to restart
+    void img.offsetWidth;
+    img.classList.add('active');
+  }
+}
 
     // ✅ Show first image by default
     if (items.length > 0) {
