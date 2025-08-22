@@ -52,6 +52,13 @@
 .card--media .card__inner .card__content{
 display: none;
 }
+.media--hover-effect img {
+  transition: transform 0.3s ease;
+}
+
+.card-wrapper:hover .media--hover-effect img {
+  transform: scale(1.03);
+}
  </style>
 {% endif %}
 {%- unless skip_styles -%}
