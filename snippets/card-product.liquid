@@ -20,6 +20,37 @@
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
+  <style>
+  .card__media {
+  position: relative;
+}
+
+.product-main-image {
+  display: block;
+  width: 100%;
+  transition: opacity 0.3s ease;
+}
+
+.product-hover-video {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-wrapper:hover .product-main-image {
+  display: none;
+}
+
+.card-wrapper:hover .product-hover-video {
+  display: block;
+}
+
+ </style>
+ 
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
