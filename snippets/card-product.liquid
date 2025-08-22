@@ -107,7 +107,7 @@
           </div>
         {%- endif -%}
          {% if card_product.metafields.custom.hover_video != blank %}
-          <video class="product-hover-video" muted loop playsinline width="{{ card_product.media[1].width }}"
+          <video class="product-hover-video" muted loop playsinline width="{{ card_product.media[1].width }}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
                   height="{{ card_product.media[1].height }}">
             <source src="{{ card_product.metafields.custom.hover_video | file_url }}" type="video/mp4">
           </video>
