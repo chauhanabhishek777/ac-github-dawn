@@ -107,7 +107,8 @@
           </div>
         {%- endif -%}
          {% if card_product.metafields.custom.hover_video != blank %}
-          <video class="product-hover-video" muted loop playsinline>
+          <video class="product-hover-video" muted loop playsinline width="{{ card_product.media[1].width }}"
+                  height="{{ card_product.media[1].height }}">
             <source src="{{ card_product.metafields.custom.hover_video | file_url }}" type="video/mp4">
           </video>
         {% endif %}
