@@ -55,6 +55,23 @@ display: none;
 .card-wrapper:hover .media--hover-effect img {
   transform: none !important;
 }
+.product-main-image,
+.product-hover-video {
+  transition: opacity 0.3s ease;
+}
+
+.card-wrapper:hover .product-main-image {
+  opacity: 0;
+}
+
+.card-wrapper:hover .product-hover-video {
+  display: block;
+  opacity: 1;
+}
+
+.product-hover-video {
+  opacity: 0;
+}
  </style>
 {% endif %}
 {%- unless skip_styles -%}
